@@ -12,11 +12,10 @@ Content-Type: application/json
 
 ### 
 
-POST {{baseUrl}}/accounts
+POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "name": "Gabriel Merigo",
   "email": "gabriel@gmail.com",
   "password": "123456"
 }
