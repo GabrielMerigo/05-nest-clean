@@ -30,3 +30,8 @@ Content-Type: application/json
 POST {{baseUrl}}/questions
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+{
+  "title": "New Question6",
+  "content": "Content of the new question36"
+}
