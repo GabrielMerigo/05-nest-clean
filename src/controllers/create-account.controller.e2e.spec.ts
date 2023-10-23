@@ -1,3 +1,3 @@
-test('1 plus 1', () => {
-  expect(1 + 1).toBe(2)
+describe('Create account (E2E)', () => {
+  test('[POST] /account', async () => {})
 })
