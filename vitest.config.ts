@@ -6,7 +6,7 @@ export default defineConfig({
   test: {
     globals: true,
     root: './',
-    exclude: [...configDefaults.exclude, '**/data/pg/**'],
+    exclude: [...configDefaults.exclude, '**/data/pg/**', '**/*.e2e.spec.ts'],
   },
   plugins: [
     tsConfigPaths(),
