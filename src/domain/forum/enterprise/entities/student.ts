@@ -1,14 +1,28 @@
-import { Entity } from '@/core/entities/entity'
-import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { Entity } from "@/core/entities/entity";
+import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 
 interface StudentsProps {
-  name: string
+  name: string;
+  email: string;
+  password: string;
 }
 
 export class Student extends Entity<StudentsProps> {
-  static create(props: StudentsProps, id?: UniqueEntityID) {
-    const student = new Student(props, id)
+  get name() {
+    return this.name;
+  }
 
-    return student
+  get email() {
+    return this.email;
+  }
+
+  get password() {
+    return this.password;
+  }
+
+  static create(props: StudentsProps, id?: UniqueEntityID) {
+    const student = new Student(props, id);
+
+    return student;
   }
 }
