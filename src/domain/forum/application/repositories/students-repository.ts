@@ -1,11 +1,6 @@
-import { PaginationParams } from '@/core/repositories/pagination-params';
-import { Question } from '../../enterprise/entities/question';
+import { Student } from '../../enterprise/entities/student'
 
-export abstract class QuestionsRepository {
-  abstract findById(id: string): Promise<Question | null>;
-  abstract findBySlug(slug: string): Promise<Question | null>;
-  abstract findManyRecent(params: PaginationParams): Promise<Question[]>;
-  abstract create(question: Question): Promise<void>;
-  abstract delete(question: Question): Promise<void>;
-  abstract save(question: Question): Promise<void>;
+export abstract class StudentsRepository {
+  abstract findByEmail(id: string): Promise<Student | null>;
+  abstract create(question: Student): Promise<void>;
 }
