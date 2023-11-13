@@ -1,3 +1,3 @@
-export abstract class Hasher {
-  abstract compare(plain: string): Promise<boolean>;
+export abstract class HashComparer {
+  abstract compare(plainPassword: string, dbPassword: string): Promise<boolean>;
 }
