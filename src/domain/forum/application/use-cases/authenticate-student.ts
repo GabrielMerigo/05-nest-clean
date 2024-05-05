@@ -23,21 +23,23 @@ export class AuthenticateStudentUseCase {
   constructor(
     private studentRepository: StudentsRepository,
     private hashComparer: HashComparer,
-    private encrypter: Encrypter
+    private encrypter: Encrypter,
   ) {}
 
   async execute({
     email,
     password,
   }: AuthenticateStudentUseCaseProps): Promise<AuthenticateStudentUseCaseResponse> {
-
     const student = await this.studentRepository.findByEmail(email)
 
     if (!student) {
       return left(new WrongCredentialsError())
     }
 
-    const isValidPassword = await this.hashComparer.compare(password, student.password)
+    const isValidPassword = await this.hashComparer.compare(
+      password,
+      student.password,
+    )
 
     if (!isValidPassword) {
       return left(new WrongCredentialsError())
@@ -47,9 +49,8 @@ export class AuthenticateStudentUseCase {
       sub: student.id.toString(),
     })
 
-
     return right({
-      accessToken
+      accessToken,
     })
   }
 }
